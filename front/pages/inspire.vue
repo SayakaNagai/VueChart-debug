@@ -1,21 +1,28 @@
 <template>
-  <!-- chartData に代入をしている -->
-  <v-row>
-    <v-col :cols="3">
-      <MainChart
-        class="chart"
-        :option="{ maintainAspectRatio: false }"
-        :chartData="chartData"
-        :width="100"
-        :height="100"
-      />
-    </v-col>
-  </v-row>
+  <v-content>
+    <v-container>
+      <!-- chartData に代入をしている -->
+      <v-row>
+        <v-col :cols="3">
+          <MainChart
+            class="chart"
+            :option="{ maintainAspectRatio: false }"
+            :chart-data="chartData"
+            :width="100"
+            :height="100"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-content>
 </template>
 
 <script>
 import MainChart from '@/components/BarChart'
 export default {
+  components: {
+    MainChart
+  },
   data() {
     return {
       chartData: {
@@ -45,9 +52,12 @@ export default {
         ]
       }
     }
-  },
-  components: {
-    MainChart
   }
 }
 </script>
+
+<style>
+.v-content {
+  max-width: 20% !important;
+}
+</style>

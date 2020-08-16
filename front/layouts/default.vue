@@ -41,11 +41,7 @@
         <v-icon>menu</v-icon>
       </v-btn>
     </v-toolbar>
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
+    <nuxt />
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-tile @click.native="right = !right">
